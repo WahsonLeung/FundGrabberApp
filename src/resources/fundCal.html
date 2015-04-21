@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/ext/icon.css"/>
+    <link rel="stylesheet" href="css/ext/bootstrap.css"/>
+    <link rel="stylesheet" href="css/ext/datepicker.css"/>
+    <link rel="stylesheet" href="css/ext/bootstrap2-toggle.css"/>
+    <link rel="stylesheet" href="css/ext/easyui.css"/>
+    <link rel="stylesheet" href="css/native/fund.css"/>
+    <link rel="stylesheet" href="css/native/loading.css"/>
+    <script src="js/ext/jquery.min.js"></script>
+    <script src="js/ext/ProgressBar.js"></script>
+    <script src="js/ext/bootstrap2-toggle.js"></script>
+    <script src="js/ext/bootstrap-datepicker.js"></script>
+    <script src="js/ext/jquery.easyui.min.js"></script>
+    <script src="js/native/fundCal.js"></script>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td {
+            height: 35px;
+        }
+
+        td[field=profit], td[field=netTotal], td[field=netProfit] {
+            width: 115px;
+        }
+
+        td[field=dif] {
+            width: 55px;
+        }
+
+        #redmpNetTotal {
+            color: red;
+        }
+
+        .redColor {
+            color: red;
+        }
+
+        .greenColor {
+            color: green;
+        }
+
+    </style>
+</head>
+<body style="overflow:hidden;">
+
+<div style="width:90%;margin:5% auto 0 auto;">
+    <div class="toolbar" style="border-bottom:2px solid #ddd;margin-bottom:10px;padding-bottom:10px;">
+        <ul class="nav nav-pills" role="tablist" style="vertical-align:middle;margin-left:70%">
+            <li id="addFundBtn" role="presentation" class="active"><a href="#">添加</a></li>
+            <li id="refreshBtn" role="presentation" class="active"><a href="#">刷新</a></li>
+            <li role="delBtn" class="active"><a href="#">删除</a></li>
+            <li>
+                <input type="checkbox" data-toggle="toggle" id="toggleRtv" data-width="100" data-height="40" data-on="实时估值" data-off="最新净值">
+            </li>
+        </ul>
+        </div>
+
+    <div id="noFundNotice" class="alert alert-danger" role="alert" style="display:none;">
+        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+    </div>
+
+    <div id="fundGrid">
+        <table id="fundTable"></table>
+    </div>
+
+    <div id="dd"></div>
+    <div id="loadingMask" style="filter:alpha(Opacity=60);position:absolute; left:0px; top:0px; width:100%; height:100%; background-color:rgba(46, 46, 46, 0.63); z-index:10000;">
+        <table border="0" style="text-align:center;vertical-align:middle;width:100%;height:100%;">
+            <tr>
+                <td>
+                    <span id="disp" style="color:#FFFFFF;">网速渣我也没办法啊。。。</span>
+                    <br>
+                    <br>
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+</div>
+</body>
+
+</html>

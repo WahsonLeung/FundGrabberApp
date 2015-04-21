@@ -1,0 +1,100 @@
+<div id="fundForm" class="form-style-2">
+    <div class="form-style-2-heading">Provide your information</div>
+    <label for="fundName">
+            <span>基金名称
+                 <span class="required">*</span>
+            </span>
+        <input placeholder="乱填你妹，我没做格式校验" type="text" class="input-field easyui-validatebox" name="fundName" data-options="required:true"
+               value=""/>
+    </label>
+
+    <label for="fundCode">
+            <span>基金代码
+                <span class="required">*</span>
+            </span>
+        <input placeholder="乱填你妹，我没做格式校验" type="text" class="input-field easyui-validatebox" name="fundCode" data-options="required:true"
+               value=""/>
+
+    </label>
+
+    <label for="buyDate">
+        <span>购买日期</span>
+
+        <div class="input-append date" id="fdatepicker" data-date="2015-04-16" data-date-format="yyyy-mm-dd">
+            <span class="add-on" style="position:absolute;padding-top:20px;"></span>
+            <input class="input-field" size="16" type="text" name="buyDate" value="2015-04-16" readonly style="cursor:pointer;">
+        </div>
+    </label>
+
+    <label for="buyNet">
+            <span>买入净值
+                <span class="required">*</span>
+            </span>
+        <input placeholder="乱填你妹，我没做格式校验" type="text" class="input-field easyui-validatebox" name="buyNet" data-options="required:true" value=""/>
+    </label>
+
+    <label for="share">
+            <span>份额
+                <span class="required">*</span>
+            </span>
+        <input placeholder="乱填你妹，我没做格式校验" type="text" class="input-field easyui-validatebox" name="share" data-options="required:true" value=""/>
+    </label>
+
+    <label for="buyCosts">
+            <span>花费总额
+                <span class="required">*</span>
+            </span>
+        <input placeholder="乱填你妹，我没做格式校验" type="text" class="input-field easyui-validatebox" name="buyCosts" data-options="required:true"
+               value=""/>
+    </label>
+
+    <label for="buyingRate">
+            <span>购买费率
+                <span class="required">*</span>
+            </span>
+        <input placeholder="乱填你妹，我没做格式校验" type="text" class="input-field easyui-validatebox" name="buyingRate" data-options="required:true"
+               value="0.003"/>
+    </label>
+
+    <label for="redemptionRate">
+            <span>赎回费率
+                <span class="required">*</span>
+            </span>
+        <input placeholder="乱填你妹，我没做格式校验" type="text" class="input-field easyui-validatebox" name="redemptionRate" data-options="required:true"
+               value="0.005"/>
+    </label>
+</div>
+<script type="text/javascript">
+    var $datePicker = $('#fdatepicker');
+    $datePicker.datepicker({
+                todayBtn: "linked",
+                todayHighlight: true
+            }).datepicker('setValue', new Date())
+            .on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            }).data('datepicker');
+    $('.datepicker').css("z-index", 12050);
+
+    $datePicker.on('click','input', function () {
+        $datePicker.datepicker('show');
+    })
+
+
+</script>
+<style>
+    .form-style-2 label{
+        margin:0px 0px 15px 0px;
+    }
+    .dialog-button{
+        border-color:#FFFFFF #95B8E7 #95B8E7 #95B8E7;
+    }
+    .dialog-toolbar, .dialog-button{
+        background:#FFFFFF;
+    }
+    .l-btn-text{
+        width:120px;
+    }
+    .dialog-button .l-btn{
+        margin:0px 10px 10px 0px;
+    }
+</style>
